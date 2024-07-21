@@ -1,11 +1,11 @@
 import { useState } from "react";
 
-export const Form = () => {
+export const Form = ({ onAddItem }) => {
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (!description) return;
 
     const newPackingItem = {
@@ -14,8 +14,8 @@ export const Form = () => {
       packed: false,
       id: Date.now(),
     };
-    console.log(newPackingItem);
 
+    onAddItem(newPackingItem);
     setDescription("");
     setQuantity(1);
   };
