@@ -105,11 +105,11 @@ const Star = ({ onRate, isFull, onHoverIn, onHoverOut, color, size }) => {
 };
 
 StarRating.propTypes = {
-    maxRating: PropTypes.number,
-    size: PropTypes.number,
-    color: PropTypes.string,
-    className: PropTypes.string,
-    messages: PropTypes.array,
-    defaultRating: PropTypes.number,
-    onSetRating: PropTypes.func,
-  };
+  maxRating: PropTypes.number,
+  size: PropTypes.number,
+  color: PropTypes.string,
+  className: PropTypes.string,
+  messages: PropTypes.array,
+  defaultRating: PropTypes.number,
+  onSetRating: PropTypes.func,
+};
