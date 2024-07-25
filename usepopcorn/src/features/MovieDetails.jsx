@@ -46,6 +46,23 @@ export const MovieDetails = ({
     getMovieDetails();
   }, [selectedId]);
 
+  useEffect(() => {
+    if (!title) return;
+    document.title = `Movie | ${title}`;
+  }, [title]);
+
+  useEffect(() => {
+    const callback = (e) => {
+      e.code === "Escape" && onCloseMovie();
+    };
+
+    document.addEventListener("keypress", callback);
+
+    return function () {
+      document.removeEventListener("keypress", callback);
+    };
+  }, [onCloseMovie]);
+
   const handleAdd = () => {
     const newWatchedMovie = {
       imdbID: selectedId,
@@ -59,6 +76,7 @@ export const MovieDetails = ({
 
     onAddWatched(newWatchedMovie);
     onCloseMovie();
+    setMovie({});
   };
 
   return (
