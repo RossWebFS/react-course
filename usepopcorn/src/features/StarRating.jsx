@@ -33,6 +33,11 @@ export const StarRating = ({
   const [rating, setRating] = useState(initialRating);
   const [tempRating, setTempRating] = useState(0);
 
+  const handleRating = (rating) => {
+    setRating(rating);
+    onSetRating && onSetRating(rating);
+  };
+
   return (
     <div style={containerStyles} className={className}>
       <div style={starContainerStyle}>
@@ -40,10 +45,7 @@ export const StarRating = ({
           <Star
             isFull={tempRating ? tempRating > i : rating > i}
             key={i}
-            onRate={() => {
-              setRating(i + 1);
-              onSetRating && onSetRating(rating);
-            }}
+            onRate={() => handleRating(i + 1)}
             onHoverIn={() => setTempRating(i + 1)}
             onHoverOut={() => setTempRating(0)}
             color={color}

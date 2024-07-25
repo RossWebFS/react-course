@@ -59,7 +59,7 @@ body {
 }
 
 .box::-webkit-scrollbar {
-  display: none
+  display: none;
 }
 
 .loader {
@@ -146,7 +146,7 @@ body {
 }
 
 .list::-webkit-scrollbar {
-  display: none
+  display: none;
 }
 
 .list-watched {
