@@ -1,16 +1,6 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 
-StarRating.propTypes = {
-  maxRating: PropTypes.number,
-  size: PropTypes.number,
-  color: PropTypes.string,
-  className: PropTypes.string,
-  messages: PropTypes.array,
-  defaultRating: PropTypes.number,
-  onSetRating: PropTypes.func,
-};
-
 export const StarRating = ({
   maxRating = 5,
   size = 48,
@@ -113,3 +103,13 @@ const Star = ({ onRate, isFull, onHoverIn, onHoverOut, color, size }) => {
     </span>
   );
 };
+
+StarRating.propTypes = {
+    maxRating: PropTypes.number,
+    size: PropTypes.number,
+    color: PropTypes.string,
+    className: PropTypes.string,
+    messages: PropTypes.array,
+    defaultRating: PropTypes.number,
+    onSetRating: PropTypes.func,
+  };
