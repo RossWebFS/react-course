@@ -3,22 +3,46 @@ import { Header } from "./layouts/Header";
 import { Main } from "./layouts/Main";
 import { useReducer } from "react";
 import { Loader } from "./components/Loader";
-import { Error } from "./components/Error";
+import { ErrorMessage } from "./components/ErrorMessage";
 import { StartScreen } from "./components/StartScreen";
+import { Question } from "./components/Question";
+import { NextButton } from "./components/NextButton";
+import { Progress } from "./components/Progress";
 
 const initialState = {
   questions: [],
   status: "loading",
+  index: 0,
+  answer: null,
+  points: 0,
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "dataReceived": {
+    case "dataReceived":
       return { ...state, questions: action.payload, status: "ready" };
-    }
-    case "dataFailed": {
+
+    case "dataFailed":
       return { ...state, status: "error" };
+
+    case "start":
+      return { ...state, status: "active" };
+
+    case "newAnswer": {
+      const question = state.questions.at(state.index);
+
+      return {
+        ...state,
+        answer: action.payload,
+        points:
+          question.correctOption === action.payload
+            ? state.points + question.points
+            : state.points,
+      };
     }
+
+    case "nextQuestion":
+      return { ...state, index: state.index + 1, answer: null };
 
     default:
       throw new Error("Unknown action");
@@ -26,7 +50,10 @@ const reducer = (state, action) => {
 };
 
 const App = () => {
-  const [{ questions, status }, dispatch] = useReducer(reducer, initialState);
+  const [{ questions, status, index, answer, points }, dispatch] = useReducer(
+    reducer,
+    initialState
+  );
 
   useEffect(() => {
     const fetchQuestions = async () => {
@@ -43,15 +70,36 @@ const App = () => {
     fetchQuestions();
   }, []);
 
+  const maxPossiblePoints = questions.reduce((prev, cur) => prev + cur.points, 0)
+
   return (
     <div className="app">
       <Header />
 
       <Main>
         {status === "loading" && <Loader />}
-        {status === "error" && <Error />}
+        {status === "error" && <ErrorMessage />}
         {status === "ready" && (
-          <StartScreen numOfQuestions={questions.length} />
+          <StartScreen dispatch={dispatch} numOfQuestions={questions.length} />
+        )}
+        {status === "active" && (
+          <>
+            <Progress
+              index={index}
+              numOfQuestions={questions.length}
+              points={points}
+              maxPossiblePoints={maxPossiblePoints}
+              answer={answer}
+            />
+            <Question
+              question={questions[index]}
+              dispatch={dispatch}
+              answer={answer}
+            />
+            <NextButton dispatch={dispatch} answer={answer}>
+              Next
+            </NextButton>
+          </>
         )}
       </Main>
     </div>
