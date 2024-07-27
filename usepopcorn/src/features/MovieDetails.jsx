@@ -52,7 +52,7 @@ export const MovieDetails = ({
     document.title = `Movie | ${title}`;
   }, [title]);
 
-  useKey("escape", onCloseMovie)
+  useKey("escape", onCloseMovie);
 
   const handleAdd = () => {
     const newWatchedMovie = {
