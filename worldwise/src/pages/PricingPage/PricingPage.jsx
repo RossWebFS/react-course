@@ -1,10 +1,10 @@
-import styles from "./ProductPage.module.css";
+import styles from "./PricingPage.module.css";
 
-import { PageNav } from "../layouts/PageNav";
+import { PageNav } from "../../layouts/PageNav/PageNav";
 
 export const PricingPage = () => {
   return (
-    <main className={styles.product}>
+    <main className={styles.pricing}>
       <PageNav />
 
       <section>
@@ -21,7 +21,7 @@ export const PricingPage = () => {
           </p>
         </div>
         <img
-          src="assets/img-2.jpg"
+          src="assets/images/img-2.jpg"
           alt="overview of a large city with skyscrapers"
         />
       </section>

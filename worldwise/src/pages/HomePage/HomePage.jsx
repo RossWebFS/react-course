@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 import styles from "./Homepage.module.css";
-import { PageNav } from "../layouts/PageNav";
+import { PageNav } from "../../layouts/PageNav/PageNav";
 
 export const HomePage = () => {
   return (

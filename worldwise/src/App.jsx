@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { HomePage } from "./pages/HomePage";
-import { ProductPage } from "./pages/ProductPage";
-import { PricingPage } from "./pages/PricingPage";
-import { NotFoundPage } from "./pages/NotFoundPage";
-import { GeoPage } from "./pages/GeoPage";
-import { LoginPage } from "./pages/LoginPage";
-import { CityList } from "./features/CityList";
-import { CountryList } from "./features/CountryList";
+import { HomePage } from "./pages/HomePage/HomePage";
+import { ProductPage } from "./pages/ProductPage/ProductPage";
+import { PricingPage } from "./pages/PricingPage/PricingPage";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
+import { GeoPage } from "./pages/GeoPage/GeoPage";
+import { LoginPage } from "./pages/LoginPage/LoginPage";
+import { CityList } from "./features/CityList/CityList";
+import { CountryList } from "./features/CountryList/CountryList";
 
 const BASE_URL = "http://localhost:4000";
 

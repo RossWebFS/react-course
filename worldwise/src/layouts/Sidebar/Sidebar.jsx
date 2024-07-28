@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 
 import styles from "./Sidebar.module.css";
-import { Logo } from "../components/Logo";
-import { AppNav } from "../layouts/AppNav";
-import { Footer } from "../layouts/Footer";
+import { Logo } from "../../components/Logo/Logo";
+import { AppNav } from "../AppNav/AppNav";
+import { Footer } from "../Footer/Footer";
 
 export const Sidebar = () => {
   return (
