@@ -1,5 +1,5 @@
 import styles from "./CityItem.module.css";
-import { formatDate } from "../utils/formDate";
+import { formatDate } from "../../utils/formDate";
 
 export const CityItem = ({ city }) => {
   const { cityName, emoji, date } = city;

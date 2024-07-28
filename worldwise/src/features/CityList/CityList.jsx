@@ -1,7 +1,7 @@
 import styles from "./CityList.module.css";
-import { Spinner } from "../components/Spinner";
-import { CityItem } from "../components/CityItem";
-import { Message } from "../components/Message";
+import { Spinner } from "../../components/Spinner/Spinner";
+import { CityItem } from "../../components/CityItem/CityItem";
+import { Message } from "../../components/Message/Message";
 
 export const CityList = ({ cities, isLoading }) => {
   if (isLoading) return <Spinner />;

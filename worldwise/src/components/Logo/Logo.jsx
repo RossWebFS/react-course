@@ -6,7 +6,7 @@ export const Logo = () => {
   return (
     <Link to="/">
       <img
-        src="/assets/logo.png"
+        src="/assets/images/logo.png"
         alt="WorldWise logo"
         className={styles.logo}
       />

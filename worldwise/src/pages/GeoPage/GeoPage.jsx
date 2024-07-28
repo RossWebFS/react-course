@@ -1,6 +1,6 @@
 import styles from "./GeoPage.module.css";
-import { Sidebar } from "../layouts/Sidebar";
-import { Map } from "../features/Map";
+import { Sidebar } from "../../layouts/Sidebar/Sidebar";
+import { Map } from "../../features/Map/Map";
 
 export const GeoPage = () => {
   return (

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import styles from "./LoginPage.module.css";
-import { PageNav } from "../layouts/PageNav";
+import { PageNav } from "../../layouts/PageNav/PageNav";
 
 export const LoginPage = () => {
   // PRE-FILL FOR DEV PURPOSES

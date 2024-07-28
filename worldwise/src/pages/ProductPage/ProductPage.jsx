@@ -1,6 +1,6 @@
 import styles from "./ProductPage.module.css";
 
-import { PageNav } from "../layouts/PageNav";
+import { PageNav } from "../../layouts/PageNav/PageNav";
 
 export const ProductPage = () => {
   return (
@@ -9,7 +9,7 @@ export const ProductPage = () => {
 
       <section>
         <img
-          src="assets/img-1.jpg"
+          src="assets/images/img-1.jpg"
           alt="person with dog overlooking mountain with sunset"
         />
         <div>
