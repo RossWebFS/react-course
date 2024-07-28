@@ -1,4 +1,3 @@
-// Uses the same styles as Product
 import styles from "./ProductPage.module.css";
 
 import { PageNav } from "../layouts/PageNav";

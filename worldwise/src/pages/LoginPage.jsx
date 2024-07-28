@@ -1,7 +1,6 @@
-import styles from "./LoginPage.module.css";
-
 import { useState } from "react";
 
+import styles from "./LoginPage.module.css";
 import { PageNav } from "../layouts/PageNav";
 
 export const LoginPage = () => {

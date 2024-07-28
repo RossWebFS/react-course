@@ -1,7 +1,5 @@
-import styles from "./Map.module.css"
+import styles from "./Map.module.css";
 
 export const Map = () => {
-    return (
-        <div className={styles.mapContainer}></div>
-    )
-}
+  return <div className={styles.mapContainer}></div>;
+};
