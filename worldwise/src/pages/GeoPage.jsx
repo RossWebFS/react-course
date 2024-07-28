@@ -1,8 +1,8 @@
+import styles from "./GeoPage.module.css";
 import { Sidebar } from "../layouts/Sidebar";
 import { Map } from "../features/Map";
-import styles from "./AppLayout.module.css";
 
-export const AppLayout = () => {
+export const GeoPage = () => {
   return (
     <div className={styles.app}>
       <Sidebar />
