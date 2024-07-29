@@ -1,5 +1,4 @@
 import styles from "./CityList.module.css";
-
 import { Spinner } from "../../components/Spinner/Spinner";
 import { CityItem } from "../../components/CityItem/CityItem";
 import { Message } from "../../components/Message/Message";
