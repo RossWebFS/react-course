@@ -1,4 +1,4 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useState } from "react";
 
 import { PostProvider, usePostContext } from "./context/PostContext";
 import { createRandomPost } from "./utils/createRandomPost";

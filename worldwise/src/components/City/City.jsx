@@ -10,7 +10,7 @@ import { Spinner } from "../Spinner/Spinner";
 export const City = () => {
   const { currentCity, fetchCityDetails, isLoading } = useCityContext();
   const { id } = useParams();
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     fetchCityDetails(id);
