@@ -5,9 +5,15 @@ import { formatDate } from "../../utils/formDate";
 import { useCityContext } from "../../contexts/CityContext";
 
 export const CityItem = ({ city }) => {
-  const { currentCity } = useCityContext();
+  const { currentCity, deleteCity } = useCityContext();
 
   const { cityName, emoji, date, id, position } = city;
+
+  const handleDeleteCity = (e) => {
+    e.preventDefault();
+
+    deleteCity(city.id)
+  };
 
   return (
     <li>
@@ -20,7 +26,9 @@ export const CityItem = ({ city }) => {
         <span className="styles.emoji">{emoji}</span>
         <h3 className={styles.name}>{cityName}</h3>
         <time className={styles.date}>({formatDate(date)})</time>
-        <button className={styles.deleteBtn}>&times;</button>
+        <button className={styles.deleteBtn} onClick={handleDeleteCity}>
+          &times;
+        </button>
       </Link>
     </li>
   );
