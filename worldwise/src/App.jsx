@@ -11,27 +11,38 @@ import { CountryList } from "./features/CountryList/CountryList";
 import { Form } from "./features/Form/Form";
 import { City } from "./components/City/City";
 import { CityProvider } from "./contexts/CityContext";
+import { AuthProvider } from "./contexts/AuthContext";
+import { ProtectedRoute } from "./pages/ProtectedRoute/ProtectedRoute";
 
 const App = () => {
   return (
-    <CityProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<HomePage />} />
-          <Route path="/product" element={<ProductPage />} />
-          <Route path="/pricing" element={<PricingPage />} />
-          <Route path="/geo" element={<GeoPage />}>
-            <Route index element={<Navigate to="cities" replace />} />
-            <Route path="cities" element={<CityList />} />
-            <Route path="cities/:id" element={<City />} />
-            <Route path="countries" element={<CountryList />} />
-            <Route path="form" element={<Form />} />
-          </Route>
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
-      </BrowserRouter>
-    </CityProvider>
+    <AuthProvider>
+      <CityProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<HomePage />} />
+            <Route path="/product" element={<ProductPage />} />
+            <Route path="/pricing" element={<PricingPage />} />
+            <Route
+              path="/geo"
+              element={
+                <ProtectedRoute>
+                  <GeoPage />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<Navigate to="cities" replace />} />
+              <Route path="cities" element={<CityList />} />
+              <Route path="cities/:id" element={<City />} />
+              <Route path="countries" element={<CountryList />} />
+              <Route path="form" element={<Form />} />
+            </Route>
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </BrowserRouter>
+      </CityProvider>
+    </AuthProvider>
   );
 };
 

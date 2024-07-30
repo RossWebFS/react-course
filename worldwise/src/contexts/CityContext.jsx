@@ -28,7 +28,7 @@ const reducer = (state, action) => {
     case "cities/deleted":
       return {
         ...state,
-        isLoaded: false,
+        isLoading: false,
         cities: state.cities.filter((city) => city.id !== action.payload),
         current: {},
       };

@@ -26,7 +26,7 @@ export const Form = () => {
   const [emoji, setEmoji] = useState("");
   const [geocodingError, setGeocodingError] = useState("");
   const { lat, lng } = useUrlPosition();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchCityData = async () => {
@@ -73,7 +73,7 @@ export const Form = () => {
     };
 
     await createCity(newCity);
-    navigate("/geo/cities")
+    navigate("/geo/cities");
   };
 
   if (isLoadingGeocoding) return <Spinner />;
@@ -84,7 +84,10 @@ export const Form = () => {
   if (geocodingError) return <Message message={geocodingError} />;
 
   return (
-    <form className={`${styles.form} ${isLoading ? styles.loading : ""}`} onSubmit={handleSubmit}>
+    <form
+      className={`${styles.form} ${isLoading ? styles.loading : ""}`}
+      onSubmit={handleSubmit}
+    >
       <div className={styles.row}>
         <label htmlFor="cityName">City name</label>
         <input
