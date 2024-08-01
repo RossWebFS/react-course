@@ -1,7 +1,7 @@
-import { CreateCustomer } from "./components/CreateCustomer";
-import { Customer } from "./components/Customer";
-import { AccountOperations } from "./components/AccountOperations";
-import { BalanceDisplay } from "./components/BalanceDisplay";
+import { CreateCustomer } from "./features/customer/CreateCustomer";
+import { Customer } from "./features/customer/Customer";
+import { AccountOperations } from "./features/account/AccountOperations";
+import { BalanceDisplay } from "./features/account/BalanceDisplay";
 
 const App = () => {
   return (
